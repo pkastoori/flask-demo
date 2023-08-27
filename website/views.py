@@ -5,7 +5,7 @@ views = Blueprint("views", __name__)
 
 @views.route("/")
 def home():
-    user = os.getenv('USER_ID') 
+    user = os.environ.get('USER_ID')
 
     if(user):
         return user
