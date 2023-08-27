@@ -1,7 +1,12 @@
 from flask import Blueprint
+import os
 
 views = Blueprint("views", __name__)
 
 @views.route("/")
 def home():
-    return "<h1>Home Page</h1>"
+    user = os.getenv('USER_ID') 
+
+    if(user):
+        return user
+    return "<h1>Hello World</h1>"
